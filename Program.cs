@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,8 +14,7 @@ namespace jogodasenha
         static void Main(string[] args)
         {
 
-            // Console.WriteLine("Digite a quantidade de numeros tera a senha");
-            // int senha = int.Parse(Console.ReadLine());
+            
 
             int[] vet1 = new int[5]; //armazena os numoros do random
             int[] vet2 = new int[5];  //armazena os numeros digitados pelo jogador
@@ -33,13 +32,7 @@ namespace jogodasenha
             {
                 vet1[i] = teste.Next(9);
             }
-            Console.WriteLine("A senha era ");
-            for (int i = 0; i < 5; i++)
-            {
-                Console.WriteLine(vet1[i]);
-            }
-
-            while (acertos  <= 5)
+             while (acertos  <= 5)
             {
 
 
@@ -62,6 +55,7 @@ namespace jogodasenha
                         {
                             Console.WriteLine("Parabens Voce Descobriu a senha !!!");
                         }
+                        Console.WriteLine();
                     }
                     else
 
@@ -69,7 +63,7 @@ namespace jogodasenha
                     {
                         vet3[i] = '#';
                     }
-                    else if (vet1[i] != vet2[i])
+                     if (vet1[i] != vet2[i])
                     {
                         for (int j = 0; j < 5; j++) // verificado se ha o numero digitado porem em posicao diferente
                         {
@@ -78,11 +72,13 @@ namespace jogodasenha
                                 vet3[i] = '?';
                             }
                         }
+                   
                     }
+                    Console.Clear();
                 }
-                // Console.Clear();
+                 
 
-                if (tentativa >= 0 && acertos <= 5)
+                if ((tentativa >= 0 && tentativa <= 4) && (acertos > 0 && acertos <=5))
                 {
                     Console.WriteLine("VOCE AINDA NAO ACERTO A SENHA");
                     Console.WriteLine();
@@ -119,22 +115,12 @@ namespace jogodasenha
                         break;
                     }
                 }
-                //Console.Clear();
-
 
             }
-        
 
-           /* if (acertos == 5)
-            {
-                Console.WriteLine("Parabens Voce Descobriu a senha !!!");
-            }*/
 
-            
+            Console.WriteLine("Parabens Voce Descobriu a senha !!!");
 
-                
-              
-        
             Console.WriteLine("A senha era ");
                 for (int i = 0; i < 5; i++)
                 {
@@ -143,12 +129,8 @@ namespace jogodasenha
 
             Console.ReadLine();
         }
-
-
-
-
-
            
         }
     }
+
 
